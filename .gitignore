@@ -1,0 +1,74 @@
+# Clinical or derived datasets
+datasets/
+**/datasets/
+data/
+**/data/
+reports/
+**/reports/
+
+# Models, adapters, and checkpoints
+models/
+**/models/
+checkpoints/
+**/checkpoints/
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+*.gguf
+adapter_model*
+optimizer.pt
+scheduler.pt
+trainer_state.json
+
+# Predictions, results, and experiment tracking
+results/
+results*/
+**/results/
+**/results*/
+outputs/
+**/outputs/
+predictions/
+**/predictions/
+wandb/
+**/wandb/
+artifacts/
+**/artifacts/
+
+# Potentially data-bearing formats
+*.jsonl
+*.csv
+*.tsv
+*.parquet
+*.feather
+*.dcm
+*.nii
+*.nii.gz
+*.npy
+*.npz
+*.pkl
+*.pickle
+*.ipynb
+
+# Archives
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+
+# Credentials and local configuration
+.env
+.env.*
+*.pem
+*.key
+*credentials*
+*token*
+
+# Logs, caches, and temporary files
+*.log
+*.out
+slurm-*.out
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.DS_Store

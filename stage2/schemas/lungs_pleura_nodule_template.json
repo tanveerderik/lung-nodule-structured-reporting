@@ -1,0 +1,843 @@
+{
+  "Lungs Pleura": {
+    "Pneumonia": {
+      "Type": {
+        "data_type": "categorical",
+        "values": [
+          "aspiration",
+          "atypical",
+          "bronchopneumonia",
+          "multifocal",
+          "tree-in-bud",
+          "lobar",
+          "consolidative",
+          "cavitary pneumonia",
+          "necrotizing",
+          "null"
+        ]
+      },
+      "Severity": {
+        "data_type": "categorical",
+        "values": [
+          "minimal",
+          "mild",
+          "mild to moderate",
+          "moderate",
+          "moderate to severe",
+          "severe",
+          "substantial",
+          "advanced",
+          "no significant",
+          "extensive",
+          "stable",
+          "trace",
+          "null"
+        ]
+      },
+      "Location": {
+        "data_type": "categorical",
+        "values": [
+          "bilateral",
+          "left lower lobe",
+          "right lower lobe",
+          "right upper lobe",
+          "left upper lobe",
+          "lingula",
+          "middle lobe",
+          "bilateral upper lobes",
+          "bilateral lower lobes",
+          "null"
+        ]
+      }
+    },
+    "Emphysema": {
+      "Type": {
+        "data_type": "categorical",
+        "values": [
+          "centrilobular",
+          "destructive centrilobular",
+          "confluent centrilobular",
+          "paraseptal",
+          "null"
+        ]
+      },
+      "Severity": {
+        "data_type": "categorical",
+        "values": [
+          "minimal",
+          "mild",
+          "mild to moderate",
+          "moderate",
+          "moderate to severe",
+          "severe",
+          "substantial",
+          "advanced",
+          "no significant",
+          "null"
+        ]
+      },
+      "Location": {
+        "data_type": "categorical",
+        "values": [
+          "diffuse",
+          "bilateral",
+          "lower lobes",
+          "upper lobes",
+          "apical",
+          "basilar",
+          "right upper lobe",
+          "right lower lobe",
+          "right middle lobe",
+          "left upper lobe",
+          "left lower lobe",
+          "lingula",
+          "null"
+        ]
+      }
+    },
+    "Pulmonary Fibrosis": {
+      "Type": {
+        "data_type": "categorical",
+        "values": [
+          "architectural distortion",
+          "conglomerate fibrosis",
+          "fibrotic changes",
+          "honeycombing",
+          "nodular scarring",
+          "peripheral",
+          "pulmonary fibrosis",
+          "radiation fibrosis",
+          "subpleural fibrosis",
+          "subpleural reticulation",
+          "traction bronchiectasis",
+          "Postoperative changes",
+          "Post radiation changes",
+          "segmental",
+          "volume loss",
+          "lobectomy",
+          "interstitial changes",
+          "mosaic attenuation",
+          "interlobular septal thickening",
+          "null"
+        ]
+      },
+      "Severity": {
+        "data_type": "categorical",
+        "values": [
+          "minimal",
+          "mild",
+          "mild to moderate",
+          "moderate",
+          "moderate to severe",
+          "severe",
+          "substantial",
+          "advanced",
+          "no significant",
+          "extensive",
+          "stable",
+          "trace",
+          "null"
+        ]
+      },
+      "Location": {
+        "data_type": "categorical",
+        "values": [
+          "anterior left upper lobe",
+          "apices",
+          "bilateral",
+          "left upper lobe",
+          "lingula",
+          "lower lobes",
+          "right lower lobe",
+          "right middle lobe",
+          "right upper lobe",
+          "subpleural",
+          "left lung",
+          "right lung",
+          "left hemithorax",
+          "right hemithorax",
+          "null"
+        ]
+      }
+    },
+    "Nodule Findings": {
+      "Number of Nodules": {
+        "data_type": "integer",
+        "values": [
+          "0-49",
+          "null"
+        ]
+      },
+      "Nodules": [
+        {
+          "Nodule ID": {
+            "data_type": "integer",
+            "values": [
+              "0-49",
+              "null"
+            ]
+          },
+          "Series ID": {
+            "data_type": "integer",
+            "values": [
+              "0-999",
+              "null"
+            ]
+          },
+          "Image ID": {
+            "data_type": "integer",
+            "values": [
+              "0-1999",
+              "null"
+            ]
+          },
+          "Lobe": {
+            "data_type": "categorical",
+            "values": [
+              "right upper lobe",
+              "right middle lobe",
+              "right lower lobe",
+              "left upper lobe",
+              "lingula",
+              "left lower lobe",
+              "null"
+            ]
+          },
+          "Segment": {
+            "data_type": "categorical",
+            "values": [
+              "apical",
+              "posterior",
+              "anterior",
+              "lateral",
+              "medial",
+              "superior",
+              "medial basal",
+              "anterior basal",
+              "lateral basal",
+              "posterior basal",
+              "apico-posterior",
+              "anteromedial basal",
+              "inferior",
+              "null"
+            ]
+          },
+          "Fissure": {
+            "data_type": "categorical",
+            "values": [
+              "right minor fissure",
+              "right major fissure",
+              "left major fissure",
+              "right fissural",
+              "left fissural",
+              "fissural",
+              "right perifissural",
+              "left perifissural",
+              "perifissural",
+              "null"
+            ]
+          },
+          "Peripheral": {
+            "data_type": "categorical",
+            "values": [
+              "subpleural",
+              "pleural-based",
+              "peripheral",
+              "null"
+            ]
+          },
+          "Tracheobronchial": {
+            "data_type": "categorical",
+            "values": [
+              "airway",
+              "tracheal",
+              "endotracheal",
+              "endobronchial",
+              "peribronchial",
+              "peribronchovascular",
+              "bronchovascular",
+              "bronchocentric",
+              "null"
+            ]
+          },
+          "Perihilar": {
+            "data_type": "categorical",
+            "values": [
+              "perihilar",
+              "null"
+            ]
+          },
+          "Lung": {
+            "data_type": "categorical",
+            "values": [
+              "left",
+              "right",
+              "bilateral",
+              "null"
+            ]
+          },
+          "Type": {
+            "data_type": "categorical",
+            "values": [
+              "solid",
+              "part-solid",
+              "mixed attenuation",
+              "cystic",
+              "ground glass",
+              "hazy",
+              "nonsolid",
+              "fluid/water",
+              "fat",
+              "calcified",
+              "part-calcified",
+              "noncalcified",
+              "cavitary",
+              "null"
+            ]
+          },
+          "Calcification Patterns": {
+            "data_type": "categorical",
+            "values": [
+              "diffuse",
+              "central",
+              "lamellated",
+              "popcorn",
+              "eccentric",
+              "dense",
+              "dendriform",
+              "punctate",
+              "linear",
+              "null"
+            ]
+          },
+          "Margin": {
+            "data_type": "categorical",
+            "values": [
+              "spiculated",
+              "smooth",
+              "lobulated",
+              "fuzzy",
+              "irregular",
+              "null"
+            ]
+          },
+          "Shape": {
+            "data_type": "categorical",
+            "values": [
+              "oval",
+              "lentiform",
+              "triangular",
+              "round",
+              "bilobed",
+              "rectangular",
+              "polygonal",
+              "spherical",
+              "irregular",
+              "ovoid",
+              "tubular",
+              "branching",
+              "null"
+            ]
+          },
+          "Long Axis (mm)": {
+            "data_type": "float",
+            "values": [
+              "0.00-100.00",
+              "null"
+            ]
+          },
+          "Short Axis (mm)": {
+            "data_type": "float",
+            "values": [
+              "0.00-100.00",
+              "null"
+            ]
+          },
+          "Third Axis (mm)": {
+            "data_type": "float",
+            "values": [
+              "0.00-100.00",
+              "null"
+            ]
+          },
+          "Average Diameter (mm)": {
+            "data_type": "float",
+            "values": [
+              "0.00-100.00",
+              "null"
+            ]
+          },
+          "Part-Solid Diameter (mm)": {
+            "data_type": "float",
+            "values": [
+              "0.00-100.00",
+              "null"
+            ]
+          },
+          "Volume (mm^3)": {
+            "data_type": "float",
+            "values": [
+              "0.00-9999.00",
+              "null"
+            ]
+          },
+          "Mass (mg)": {
+            "data_type": "float",
+            "values": [
+              "0.00-9999.00",
+              "null"
+            ]
+          },
+          "Qualitative Size": {
+            "data_type": "categorical",
+            "values": [
+              "large",
+              "small",
+              "tiny",
+              "micronodule",
+              "punctate",
+              "scattered micronodules",
+              "subcentimeter",
+              "null"
+            ]
+          },
+          "Stability": {
+            "data_type": "categorical",
+            "values": [
+              "stable",
+              "increase",
+              "decrease",
+              "new",
+              "changed",
+              "baseline",
+              "interval development",
+              "resolved",
+              "null"
+            ]
+          },
+          "Lung-RADS": {
+            "data_type": "categorical",
+            "values": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4A",
+              "4B",
+              "4X",
+              "null"
+            ]
+          },
+          "Comparison Date": {
+            "data_type": "string",
+            "values": [
+              "MM/DD/YYYY",
+              "null"
+            ]
+          }
+        }
+      ],
+      "Overall Lung-RADS": {
+        "data_type": "categorical",
+        "values": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4A",
+          "4B",
+          "4X",
+          "null"
+        ]
+      },
+      "Recommend Imaging": {
+        "data_type": "categorical",
+        "values": [
+          "LDCT",
+          "LDCT, PET/CT",
+          "LDCT, Tissue sampling",
+          "LDCT, PET/CT, Tissue sampling",
+          "LDCT, Diagnostic CT",
+          "LDCT, Diagnostic CT, PET/CT",
+          "LDCT, Diagnostic CT, PET/CT, Tissue sampling",
+          "Diagnostic CT",
+          "Diagnostic CT with contrast",
+          "Diagnostic CT, PET/CT",
+          "Diagnostic CT with contrast, PET/CT",
+          "Diagnostic CT, PET/CT, Tissue sampling",
+          "Diagnostic CT with contrast, PET/CT, Tissue sampling",
+          "PET/CT",
+          "PET/CT, Tissue sampling",
+          "Tissue sampling",
+          "null"
+        ]
+      },
+      "Imaging Interval": {
+        "data_type": "categorical",
+        "values": [
+          "1 month",
+          "1-2 months",
+          "1-3 months",
+          "2-3 months",
+          "3 months",
+          "3-6 months",
+          "4-6 months",
+          "6 months",
+          "6-12 months",
+          "12 months",
+          "null"
+        ]
+      },
+      "Follow-up Date": {
+        "data_type": "string",
+        "values": [
+          "MM/DD/YYYY",
+          "null"
+        ]
+      }
+    },
+    "Bronchiectasis": {
+      "Type": {
+        "data_type": "categorical",
+        "values": [
+          "generalized",
+          "traction",
+          "small airway",
+          "focal",
+          "basilar predominant",
+          "chronic",
+          "central",
+          "cystic",
+          "null"
+        ]
+      },
+      "Severity": {
+        "data_type": "categorical",
+        "values": [
+          "minimal",
+          "mild",
+          "mild to moderate",
+          "moderate",
+          "moderate to severe",
+          "severe",
+          "substantial",
+          "advanced",
+          "no significant",
+          "extensive",
+          "stable",
+          "trace",
+          "null"
+        ]
+      },
+      "Location": {
+        "data_type": "categorical",
+        "values": [
+          "bilateral",
+          "bilateral lower lobes",
+          "left lung",
+          "left upper lobe",
+          "lower lobes",
+          "right lower lobe",
+          "right lung",
+          "lung bases",
+          "posterior",
+          "medial basal right lower lobe",
+          "right hilum",
+          "central",
+          "lingula",
+          "medial upper lobes",
+          "null"
+        ]
+      }
+    },
+    "Atelectasis": {
+      "Type": {
+        "data_type": "categorical",
+        "values": [
+          "atelectasis",
+          "chronic atelectasis",
+          "collapse",
+          "compressive atelectasis",
+          "dependent atelectasis",
+          "discoid scarring",
+          "linear bands",
+          "linear scarring",
+          "partial atelectasis",
+          "platelike",
+          "platelike atelectasis",
+          "postradiation scarring",
+          "subsegmental atelectasis",
+          "null"
+        ]
+      },
+      "Severity": {
+        "data_type": "categorical",
+        "values": [
+          "minimal",
+          "mild",
+          "mild to moderate",
+          "moderate",
+          "moderate to severe",
+          "severe",
+          "substantial",
+          "advanced",
+          "no significant",
+          "extensive",
+          "stable",
+          "trace",
+          "null"
+        ]
+      },
+      "Location": {
+        "data_type": "categorical",
+        "values": [
+          "basilar",
+          "bilateral bases",
+          "bilateral lower lobes",
+          "dependent",
+          "left lower lobe",
+          "left upper lobe",
+          "lingula",
+          "posterior",
+          "posterior lower lobes",
+          "right lower lobe",
+          "right middle lobe",
+          "null"
+        ]
+      }
+    },
+    "Lung Cysts": {
+      "Type": {
+        "data_type": "categorical",
+        "values": [
+          "bullous changes",
+          "cystic change",
+          "scattered cysts",
+          "scattered thin-walled pulmonary cysts",
+          "thin-walled cysts",
+          "stacked cystic lucencies",
+          "tiny cystic lesions",
+          "null"
+        ]
+      },
+      "Severity": {
+        "data_type": "categorical",
+        "values": [
+          "minimal",
+          "mild",
+          "mild to moderate",
+          "moderate",
+          "moderate to severe",
+          "severe",
+          "substantial",
+          "advanced",
+          "no significant",
+          "extensive",
+          "stable",
+          "trace",
+          "null"
+        ]
+      },
+      "Location": {
+        "data_type": "categorical",
+        "values": [
+          "all lobes",
+          "apices",
+          "bases",
+          "bilateral lungs",
+          "right lung base",
+          "left lung base",
+          "both lungs",
+          "left upper lobe",
+          "right upper lobe",
+          "upper lobes",
+          "upper lobes bilaterally",
+          "subpleural",
+          "central",
+          "null"
+        ]
+      }
+    },
+    "Pleural Effusion": {
+      "Type": {
+        "data_type": "categorical",
+        "values": [
+          "loculated",
+          "simple fluid attenuation",
+          "mixed density",
+          "null"
+        ]
+      },
+      "Severity": {
+        "data_type": "categorical",
+        "values": [
+          "minimal",
+          "mild",
+          "mild to moderate",
+          "moderate",
+          "moderate to severe",
+          "severe",
+          "substantial",
+          "advanced",
+          "no significant",
+          "extensive",
+          "stable",
+          "trace",
+          "null"
+        ]
+      },
+      "Location": {
+        "data_type": "categorical",
+        "values": [
+          "bilateral",
+          "left",
+          "right",
+          "mediastinal",
+          "null"
+        ]
+      }
+    },
+    "Pneumothorax": {
+      "Type": {
+        "data_type": "categorical",
+        "values": [
+          "apical",
+          "hydropneumothorax",
+          "pneumothorax",
+          "collapsed",
+          "hemopneumothorax"
+        ]
+      },
+      "Severity": {
+        "data_type": "categorical",
+        "values": [
+          "minimal",
+          "mild",
+          "mild to moderate",
+          "moderate",
+          "moderate to severe",
+          "severe",
+          "substantial",
+          "advanced",
+          "no significant",
+          "extensive",
+          "stable",
+          "trace",
+          "null"
+        ]
+      },
+      "Location": {
+        "data_type": "categorical",
+        "values": [
+          "left",
+          "right",
+          "right upper lobe",
+          "posterior right lower lobe",
+          "right middle lobe",
+          "null"
+        ]
+      }
+    },
+    "Pleural Fibrotic": {
+      "Type": {
+        "data_type": "categorical",
+        "values": [
+          "calcified",
+          "calcified pleural plaque",
+          "pleural calcification",
+          "linear",
+          "nodular",
+          "mineralization",
+          "partially calcified",
+          "ossified",
+          "focal thickening",
+          "minimally calcified",
+          "nodular thickening",
+          "thickening",
+          "noncalcified",
+          "plaque-like",
+          "scattered",
+          "null"
+        ]
+      },
+      "Severity": {
+        "data_type": "categorical",
+        "values": [
+          "minimal",
+          "mild",
+          "mild to moderate",
+          "moderate",
+          "moderate to severe",
+          "severe",
+          "substantial",
+          "advanced",
+          "no significant",
+          "extensive",
+          "stable",
+          "trace",
+          "null"
+        ]
+      },
+      "Location": {
+        "data_type": "categorical",
+        "values": [
+          "apices",
+          "bases",
+          "bilateral",
+          "left",
+          "right",
+          "posterolateral",
+          "left costophrenic angle",
+          "right middle lobe",
+          "biapical",
+          "surface",
+          "space",
+          "posterior medial",
+          "pleural-based",
+          "parenchymal",
+          "null"
+        ]
+      }
+    },
+    "Loculated Effusion": {
+      "Type": {
+        "data_type": "categorical",
+        "values": [
+          "loculated",
+          "multiloculated",
+          "loculated thickening",
+          "complex",
+          "gas",
+          "null"
+        ]
+      },
+      "Severity": {
+        "data_type": "categorical",
+        "values": [
+          "minimal",
+          "mild",
+          "mild to moderate",
+          "moderate",
+          "moderate to severe",
+          "severe",
+          "substantial",
+          "advanced",
+          "no significant",
+          "extensive",
+          "stable",
+          "trace",
+          "null"
+        ]
+      },
+      "Location": {
+        "data_type": "categorical",
+        "values": [
+          "right",
+          "left",
+          "bilateral",
+          "null"
+        ]
+      }
+    }
+  }
+}

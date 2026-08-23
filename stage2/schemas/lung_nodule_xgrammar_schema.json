@@ -1,0 +1,522 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Nullable Sparse Lung Nodule Structured Output",
+  "type": "object",
+  "properties": {
+    "Number of Nodules": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 49
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "Nodules": {
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "Nodule ID": {
+                "anyOf": [
+                  {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 49
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "Series ID": {
+                "anyOf": [
+                  {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 999
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "Image ID": {
+                "anyOf": [
+                  {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 1999
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "Lobe": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "enum": [
+                      "right upper lobe",
+                      "right middle lobe",
+                      "right lower lobe",
+                      "left upper lobe",
+                      "lingula",
+                      "left lower lobe"
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "Segment": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "enum": [
+                      "apical",
+                      "posterior",
+                      "anterior",
+                      "lateral",
+                      "medial",
+                      "superior",
+                      "medial basal",
+                      "anterior basal",
+                      "lateral basal",
+                      "posterior basal",
+                      "apico-posterior",
+                      "anteromedial basal",
+                      "inferior"
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "Fissure": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "enum": [
+                      "right minor fissure",
+                      "right major fissure",
+                      "left major fissure",
+                      "right fissural",
+                      "left fissural",
+                      "fissural",
+                      "right perifissural",
+                      "left perifissural",
+                      "perifissural"
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "Peripheral": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "enum": [
+                      "subpleural",
+                      "pleural-based",
+                      "peripheral"
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "Tracheobronchial": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "enum": [
+                      "airway",
+                      "tracheal",
+                      "endotracheal",
+                      "endobronchial",
+                      "peribronchial",
+                      "peribronchovascular",
+                      "bronchovascular",
+                      "bronchocentric"
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "Perihilar": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "enum": [
+                      "perihilar"
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "Lung": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "enum": [
+                      "left",
+                      "right",
+                      "bilateral"
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "Type": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "enum": [
+                      "solid",
+                      "part-solid",
+                      "mixed attenuation",
+                      "cystic",
+                      "ground glass",
+                      "hazy",
+                      "nonsolid",
+                      "fluid/water",
+                      "fat",
+                      "calcified",
+                      "part-calcified",
+                      "noncalcified",
+                      "cavitary"
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "Calcification Patterns": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "enum": [
+                      "diffuse",
+                      "central",
+                      "lamellated",
+                      "popcorn",
+                      "eccentric",
+                      "dense",
+                      "dendriform",
+                      "punctate",
+                      "linear"
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "Margin": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "enum": [
+                      "spiculated",
+                      "smooth",
+                      "lobulated",
+                      "fuzzy",
+                      "irregular"
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "Shape": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "enum": [
+                      "oval",
+                      "lentiform",
+                      "triangular",
+                      "round",
+                      "bilobed",
+                      "rectangular",
+                      "polygonal",
+                      "spherical",
+                      "irregular",
+                      "ovoid",
+                      "tubular",
+                      "branching"
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "Long Axis (mm)": {
+                "anyOf": [
+                  {
+                    "type": "number",
+                    "minimum": 0.0,
+                    "maximum": 100.0
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "Short Axis (mm)": {
+                "anyOf": [
+                  {
+                    "type": "number",
+                    "minimum": 0.0,
+                    "maximum": 100.0
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "Third Axis (mm)": {
+                "anyOf": [
+                  {
+                    "type": "number",
+                    "minimum": 0.0,
+                    "maximum": 100.0
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "Average Diameter (mm)": {
+                "anyOf": [
+                  {
+                    "type": "number",
+                    "minimum": 0.0,
+                    "maximum": 100.0
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "Part-Solid Diameter (mm)": {
+                "anyOf": [
+                  {
+                    "type": "number",
+                    "minimum": 0.0,
+                    "maximum": 100.0
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "Volume (mm^3)": {
+                "anyOf": [
+                  {
+                    "type": "number",
+                    "minimum": 0.0,
+                    "maximum": 9999.0
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "Mass (mg)": {
+                "anyOf": [
+                  {
+                    "type": "number",
+                    "minimum": 0.0,
+                    "maximum": 9999.0
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "Qualitative Size": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "enum": [
+                      "large",
+                      "small",
+                      "tiny",
+                      "micronodule",
+                      "punctate",
+                      "scattered micronodules",
+                      "subcentimeter"
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "Stability": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "enum": [
+                      "stable",
+                      "increase",
+                      "decrease",
+                      "new",
+                      "changed",
+                      "baseline",
+                      "interval development",
+                      "resolved"
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "Lung-RADS": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "enum": [
+                      "0",
+                      "1",
+                      "2",
+                      "3",
+                      "4A",
+                      "4B",
+                      "4X"
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "Comparison Date": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "pattern": "^(?:0?[1-9]|1[0-2])/(?:0?[1-9]|[12][0-9]|3[01])/(?:[0-9]{2}|[0-9]{4})$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "maxItems": 49
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "Overall Lung-RADS": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4A",
+            "4B",
+            "4X"
+          ]
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "Recommend Imaging": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "LDCT",
+            "LDCT, PET/CT",
+            "LDCT, Tissue sampling",
+            "LDCT, PET/CT, Tissue sampling",
+            "LDCT, Diagnostic CT",
+            "LDCT, Diagnostic CT, PET/CT",
+            "LDCT, Diagnostic CT, PET/CT, Tissue sampling",
+            "Diagnostic CT",
+            "Diagnostic CT with contrast",
+            "Diagnostic CT, PET/CT",
+            "Diagnostic CT with contrast, PET/CT",
+            "Diagnostic CT, PET/CT, Tissue sampling",
+            "Diagnostic CT with contrast, PET/CT, Tissue sampling",
+            "PET/CT",
+            "PET/CT, Tissue sampling",
+            "Tissue sampling"
+          ]
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "Imaging Interval": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "1 month",
+            "1-2 months",
+            "1-3 months",
+            "2-3 months",
+            "3 months",
+            "3-6 months",
+            "4-6 months",
+            "6 months",
+            "6-12 months",
+            "12 months"
+          ]
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "Follow-up Date": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?:(?:0?[1-9]|1[0-2])/(?:0?[1-9]|[12][0-9]|3[01])/(?:[0-9]{2}|[0-9]{4})|(?:0?[1-9]|1[0-2])/[0-9]{4})$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "description": "Sparse lung-nodule output schema for constrained decoding. Properties may be omitted, and emitted values may be JSON null. Null-valued fields are removed deterministically after parsing before evaluation."
+}
