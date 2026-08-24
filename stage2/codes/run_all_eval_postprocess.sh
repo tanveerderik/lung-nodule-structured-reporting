@@ -12,11 +12,13 @@
 
 set -euo pipefail
 
-ROOT="${ROOT:-$HOME/llm_medical/lungs_pleura_nodule_focused}"
-CODE_DIR="${CODE_DIR:-$ROOT/codes}"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
+ROOT="${ROOT:-$REPO_ROOT}"
+CODE_DIR="${CODE_DIR:-$SCRIPT_DIR}"
 RESULTS_DIR="${RESULTS_DIR:-$ROOT/results}"
-FEATURE_SCHEMA="${FEATURE_SCHEMA:-$ROOT/schemas/lungs_pleura_nodule_template.json}"
-XGRAMMAR_SCHEMA="${XGRAMMAR_SCHEMA:-$ROOT/schemas/lung_nodule_xgrammar_schema.json}"
+FEATURE_SCHEMA="${FEATURE_SCHEMA:-$REPO_ROOT/stage2/schemas/lungs_pleura_nodule_template.json}"
+XGRAMMAR_SCHEMA="${XGRAMMAR_SCHEMA:-$REPO_ROOT/stage2/schemas/lung_nodule_xgrammar_schema.json}"
 EXPECTED_BASE_DC_MODE="${EXPECTED_BASE_DC_MODE:-authentic_dynamic_template}"
 EXPECTED_SFT_DC_MODE="${EXPECTED_SFT_DC_MODE:-v0_tagged_grammar}"
 EXPECTED_TEMPLATE_BASENAME="${EXPECTED_TEMPLATE_BASENAME:-lungs_pleura_nodule_template.json}"
@@ -101,7 +103,7 @@ if missing:
     raise SystemExit(
         "ERROR: Missing postprocessing Python packages: "
         + ", ".join(missing)
-        + ". Install them in the active llm_medical environment before rerunning."
+        + ". Install them in the active Python environment before rerunning."
     )
 PY
 
@@ -921,6 +923,9 @@ for regime_key, spec in regimes.items():
         supported_fp = 0.0
         supported_fn = 0.0
         supported_features = 0
+        supported_gold_appearances = 0.0
+        supported_feature_f1_sum = 0.0
+        supported_gold_weighted_f1_sum = 0.0
         zero_support_features = 0
         zero_support_fp = 0.0
 
@@ -954,6 +959,10 @@ for regime_key, spec in regimes.items():
                 supported_tp += tp
                 supported_fp += fp
                 supported_fn += fn
+                feature_f1 = float(item.get("f1") or 0.0)
+                supported_gold_appearances += gold
+                supported_feature_f1_sum += feature_f1
+                supported_gold_weighted_f1_sum += gold * feature_f1
             else:
                 zero_support_features += 1
                 zero_support_fp += fp
@@ -962,6 +971,14 @@ for regime_key, spec in regimes.items():
             supported_tp,
             supported_fp,
             supported_fn,
+        )
+        mean_feature_f1 = (
+            supported_feature_f1_sum / supported_features
+            if supported_features else 0.0
+        )
+        gold_support_weighted_f1 = (
+            supported_gold_weighted_f1_sum / supported_gold_appearances
+            if supported_gold_appearances else 0.0
         )
 
         feature_aggregate_rows.append(
@@ -976,6 +993,10 @@ for regime_key, spec in regimes.items():
                 "precision_supported_features": precision,
                 "recall_supported_features": recall,
                 "f1_supported_features": f1,
+                "micro_f1_supported_features": f1,
+                "mean_feature_f1_supported_features": mean_feature_f1,
+                "gold_support_weighted_f1_supported_features": gold_support_weighted_f1,
+                "gold_appearances_supported_features": supported_gold_appearances,
                 "zero_support_feature_count": zero_support_features,
                 "zero_support_FP": zero_support_fp,
             }
@@ -1125,6 +1146,16 @@ feature_aggregate_df.to_markdown(
     results_dir / "all_featurewise_supported_micro_summary.md",
     index=False,
 )
+# Metric-neutral alias containing micro-F1, equal-weight feature F1, and the
+# gold-reference-support-weighted feature F1 sensitivity metric.
+feature_aggregate_df.to_csv(
+    results_dir / "all_featurewise_supported_metric_summary.csv",
+    index=False,
+)
+feature_aggregate_df.to_markdown(
+    results_dir / "all_featurewise_supported_metric_summary.md",
+    index=False,
+)
 
 # Verify that token totals in summaries match the underlying case files.
 token_validation_df.to_csv(
@@ -1215,6 +1246,8 @@ manifest = {
         "all_featurewise_f1_all_regimes.xlsx",
         "all_featurewise_supported_micro_summary.csv",
         "all_featurewise_supported_micro_summary.md",
+        "all_featurewise_supported_metric_summary.csv",
+        "all_featurewise_supported_metric_summary.md",
         "all_eval_token_usage_validation.csv",
         "all_eval_token_usage_validation.md",
         "base_controlled_pair_audit_side_by_side.csv",

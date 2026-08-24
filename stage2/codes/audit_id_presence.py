@@ -9,7 +9,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Dict, Iterator, List, Optional, Tuple
 
-DATA_DIR = Path('~/llm_medical/lungs_pleura_nodule_focused/datasets').expanduser()
+DATA_DIR = Path(__file__).resolve().parents[2] / "datasets"
 DEFAULT_FILES = [DATA_DIR / 'train_nodule.json', DATA_DIR / 'val_nodule.json']
 OUT_DIR = Path('id_audit_outputs')
 KEY_TOKEN_CHARS = r'A-Za-z0-9_'
